@@ -10,10 +10,9 @@
     "lucide-react": "^0.263.1"
   },
   "scripts": {
-    "prebuild": "chmod +x node_modules/.bin/react-scripts || true",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "node node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "node node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "node node_modules/react-scripts/bin/react-scripts.js test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
