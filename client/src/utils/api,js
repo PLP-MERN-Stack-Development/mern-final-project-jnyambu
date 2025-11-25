@@ -24,7 +24,18 @@ export const getSkills = async () => {
   }
 };
 
-export const submitContactForm = async (formData) => {
+export type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+/**
+ * Submit contact form to the backend.
+ * @param {ContactFormData} formData
+ * @returns {Promise<any>}
+ */
+export const submitContactForm = async (formData: ContactFormData): Promise<any> => {
   try {
     const response = await axios.post(`${API_URL}/api/contact`, formData);
     return response.data;
