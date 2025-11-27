@@ -11,7 +11,7 @@
     "install-server": "cd server && npm install",
     "install-all": "npm install && npm run install-client && npm run install-server",
 
-    "build-client": "cd client && npm install && npm run build",
+    "build-client": "cd client && npm ci && npm run build",
     "start-client": "cd client && serve -s build",
 
     "start-server": "cd server && npm start",
