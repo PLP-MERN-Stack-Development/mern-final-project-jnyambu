@@ -1,8 +1,7 @@
-// src/utils/api.js - Frontend API utility
 import axios from 'axios';
 
-// For Vercel deployment - API routes are at /api/*
-const API_URL = process.env.REACT_APP_API_URL || '';
+// Use your deployed backend URL
+const API_URL = process.env.REACT_APP_API_URL || 'https://portfolio-backend-xxxx.onrender.com';
 
 export const getProjects = async () => {
   try {
@@ -10,7 +9,8 @@ export const getProjects = async () => {
     return response.data;
   } catch (error) {
     console.error('Error fetching projects:', error);
-    throw error;
+    // Fallback to empty array instead of throwing
+    return [];
   }
 };
 
@@ -20,7 +20,13 @@ export const getSkills = async () => {
     return response.data;
   } catch (error) {
     console.error('Error fetching skills:', error);
-    throw error;
+    // Fallback data
+    return [
+      { _id: '1', name: 'MongoDB', description: 'NoSQL database', icon: '🍃', color: 'bg-green-500' },
+      { _id: '2', name: 'Express.js', description: 'RESTful APIs', icon: '⚡', color: 'bg-gray-700' },
+      { _id: '3', name: 'React', description: 'Modern UI', icon: '⚛️', color: 'bg-blue-500' },
+      { _id: '4', name: 'Node.js', description: 'Backend server', icon: '🟢', color: 'bg-green-600' }
+    ];
   }
 };
 
@@ -29,7 +35,7 @@ export const sendContactMessage = async (formData) => {
     const response = await axios.post(`${API_URL}/api/contact`, formData);
     return response.data;
   } catch (error) {
-    console.error('Error sending contact message:', error);
+    console.error('Error sending message:', error);
     throw error;
   }
 };
