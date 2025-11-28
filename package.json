@@ -11,8 +11,6 @@
     "install-all": "npm run install-client && npm run install-server",
     "build-client": "npm run build --prefix client",
     "build": "npm run install-all && npm run build-client",
-    "start": "node server/index.js",
-    "dev-server": "npm run dev --prefix server",
-    "dev-client": "npm start --prefix client"
+    "start": "node server/index.js"
   }
 }
