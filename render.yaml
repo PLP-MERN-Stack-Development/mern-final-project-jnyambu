@@ -1,0 +1,9 @@
+# Render configuration to build the client frontend explicitly with npm ci
+# Configure a static site render entry that builds the client
+staticSites:
+  - name: portfolio-client
+    env: node
+    branch: main
+    buildCommand: "cd client && npm ci && npm run build"
+    publishPath: "client/build"
+    # Optional: autoDeploy: true
