@@ -1,3 +1,4 @@
+@"
 services:
   - type: web
     name: mern-portfolio
@@ -7,3 +8,4 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+"@ | Out-File -Encoding ASCII render.yaml
